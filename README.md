@@ -1,2 +1,2 @@
 # Crypto-Paper-Trader
-Project for the coursework of CSN-291 
+Project for the coursework of CSN-291.
