@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="../static/nucleo-icons.css" rel="stylesheet" />
+    <link href="../static/nucleo-svg.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="../static/nucleo-svg.css" rel="stylesheet" />
+    <link id="pagestyle" href="../static/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
+
+    {% if title %}
+        <title>Flask Blog - {{ title }}</title>
+    {% else %}
+        <title>Flask Blog</title>
+    {% endif %}
+</head>
+<body>
+    <main class="main-content  mt-0">
+        <section>
+            <div class="page-header min-vh-75">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
+                            <div class="card card-plain mt-2">
+                                {% with messages = get_flashed_messages(with_categories=true) %}
+                                    {% if messages %}
+                                    {% for category, message in messages %}
+                                        <div class="alert alert-{{ category }}">
+                                        {{ message }}
+                                        </div>
+                                    {% endfor %}
+                                    {% endif %}
+                                {% endwith %}
+                                <div class="card-header pb-0 text-center bg-transparent">
+                                    <h3 class="font-weight-bolder text-info text-gradient">Register Now</h3>
+                                </div>
+                                <div class="content-section">
+                                    <form method="POST" action="">
+                                        {{ form.hidden_tag() }}
+                                        <fieldset class="form-group">
+                                            <div class="form-group">
+                                                {{ form.username.label(class="form-control-label") }}
+                            
+                                                {% if form.username.errors %}
+                                                    {{ form.username(class="form-control form-control-lg is-invalid") }}
+                                                    <div class="invalid-feedback">
+                                                        {% for error in form.username.errors %}
+                                                            <span>{{ error }}</span>
+                                                        {% endfor %}
+                                                    </div>
+                                                {% else %}
+                                                    {{ form.username(class="form-control form-control-lg") }}
+                                                {% endif %}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form.email.label(class="form-control-label") }}
+                                                {% if form.email.errors %}
+                                                    {{ form.email(class="form-control form-control-lg is-invalid") }}
+                                                    <div class="invalid-feedback">
+                                                        {% for error in form.email.errors %}
+                                                            <span>{{ error }}</span>
+                                                        {% endfor %}
+                                                    </div>
+                                                {% else %}
+                                                    {{ form.email(class="form-control form-control-lg") }}
+                                                {% endif %}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form.password.label(class="form-control-label") }}
+                                                {% if form.password.errors %}
+                                                    {{ form.password(class="form-control form-control-lg is-invalid") }}
+                                                    <div class="invalid-feedback">
+                                                        {% for error in form.password.errors %}
+                                                            <span>{{ error }}</span>
+                                                        {% endfor %}
+                                                    </div>
+                                                {% else %}
+                                                    {{ form.password(class="form-control form-control-lg") }}
+                                                {% endif %}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form.confirm_password.label(class="form-control-label") }}
+                                                {% if form.confirm_password.errors %}
+                                                    {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
+                                                    <div class="invalid-feedback">
+                                                        {% for error in form.confirm_password.errors %}
+                                                            <span>{{ error }}</span>
+                                                        {% endfor %}
+                                                    </div>
+                                                {% else %}
+                                                    {{ form.confirm_password(class="form-control form-control-lg") }}
+                                                {% endif %}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form.submit(class="btn bg-gradient-info w-100 mt-4 mb-0") }}
+                                            </div>
+                                            <div class="text-center">
+                                                <small class="text-muted">
+                                                    Already Have An Account? <a class="text-info text-gradient font-weight-bolder" href="{{ url_for('login') }}">Sign In</a>
+                                                </small>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <main role="main" class="container">
+        <div class="row">
+            <div class="col-md-8">
+                </div>
+            </div> 
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
