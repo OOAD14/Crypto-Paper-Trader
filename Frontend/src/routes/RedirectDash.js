@@ -7,7 +7,7 @@ const RedirectDash = ({ children }) => {
     const { auth, loading } = useAuth()
 
     return (
-        <>{!loading && (!auth ? children : <Navigate to={"/dashboard"} />)}</>
+        <>{!loading && (!auth ? children : <Navigate to={"/exchange"} />)}</>
     )
 }
 

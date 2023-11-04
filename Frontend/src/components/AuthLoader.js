@@ -1,11 +1,10 @@
 import React from 'react'
-import loader from "../assests/animations/loader.gif"
+import {CircularProgress} from "@nextui-org/react";
 
 const Loader = () => {
     return (
-        <div style={{ height: "100vh", width: "100%" }} className='d-flex flex-column justify-content-center align-items-center'>
-            <img src={loader} className="mb-3" style={{ height: "100px" }} alt="Loader" />
-            <small>Loading the resources</small>
+        <div className='d-flex flex-column justify-content-center align-items-center' style={{ width: "100%", height: "100%" }}>
+            <CircularProgress color="default" aria-label="Loading..."/>
         </div>
     )
 }

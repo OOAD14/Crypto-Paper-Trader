@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react'
-import "./login.css"
 import { basicAxios } from '../../api/customAxios'
 
 const Login = () => {

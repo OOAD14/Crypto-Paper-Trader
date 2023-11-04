@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { basicAxios } from "../api/customAxios"
 import Success from "../components/Success"
+import { Input, Button } from "@nextui-org/react";
+import { Alert } from 'react-bootstrap';
 
-const Buy = ({ stock }) => {
+const Buy = ({ name, price, change, balance, setChange, setBalance }) => {
     const [quantity, setQuan] = useState("0")
     const [amount, setAmount] = useState("0")
     const [show, setShow] = useState(false)
@@ -10,48 +12,89 @@ const Buy = ({ stock }) => {
 
     const bought = async (e) => {
         e.preventDefault()
+
+        const buyData = {
+            jwt_token: localStorage.getItem("jwt_token"),
+            stock_name: name, 
+            stock_price: parseInt(price), 
+            stock_quantity: parseInt(quantity), 
+        };
+
         try {
             if (parseInt(quantity) <= 0) throw new Error("Quantity should be more than zero")
-            await basicAxios.post("/trading/buy/", {
-                jwt_token: localStorage.getItem("jwt_token"),
-                stock_name: stock.stockname,
-                stock_quantity: parseInt(quantity),
-                stock_price: parseFloat(stock.price),
+            const response = await basicAxios.post("/trading/buy/", buyData);
+            const res1 = await basicAxios.post("/trading/getbalance/", {
+                jwt_token: localStorage.getItem("jwt_token")
             })
+            setBalance(res1.data.balance)
+
+            setQuan(0)
+            setAmount(0)
             setShow(true)
         }
         catch (err) {
             setError(err?.message || "Error occured while searching")
         }
     }
+
     return (
         <form onSubmit={bought} noValidate>
-            {error !== "" && <div className="mt-2 alert alert-warning" role="alert">
+            {error !== '' && (
+                <Alert type="warning" className="mt-4">
                 {error}
-            </div>}
-            {show && <Success success_text={"Bought"} />}
-            <div className="form-floating mb-3">
-                <input type="text" value={stock.price} className="form-control" id="buy-price" placeholder="Price" readOnly={true} />
-                <label forhtml="buy-price">Price</label>
+                </Alert>
+            )}
+            {show && <Success success_text="Bought" />}
+            <div className="mb-3">
+                <Input
+                type="text"
+                value={price}
+                readOnly
+                id="buy-price"
+                placeholder="Price"
+                variant="underlined"
+                label="Price"
+                />
             </div>
-            <div className="form-floating mb-3">
-                <input value={quantity} onChange={(e) => {
+            <div className="mb-3">
+                <Input
+                type="text"
+                value={quantity}
+                id="buy-quantity"
+                placeholder="Quantity"
+                variant="underlined"
+                label="Quantity"
+                onChange={(e) => {
                     setQuan(e.target.value);
-                    const am = (Math.round(100 * parseFloat(stock.price) * parseInt((e.target.value) || "0")) / 100).toString()
-                    setAmount(am)
-                }} type="text" className="form-control" id="buy-quantity" placeholder="Quantity" />
-                <label forhtml="buy-quantity">Quantity</label>
+                    const am = (
+                    (Math.round(100 * parseFloat(price) * parseInt(e.target.value || '0')) / 100)
+                    ).toString();
+                    setAmount(am);
+                }}
+                />
             </div>
-            <div className="form-floating mb-3">
-                <input value={amount} readOnly={true} type="text" className="form-control" id="buy-invest-amount" placeholder="Investment Amount" />
-                <label forhtml="buy-invest-amount">Investment Amount</label>
-            </div>
-            <div className="form-floating mb-3">
-                <input type="text" className="form-control" id="buy-question" placeholder="Why I bought this Stock?" />
-                <label forhtml="buy-question">Why I bought this Stock?</label>
+            <div className="mb-3">
+                <Input
+                type="text"
+                value={amount}
+                readOnly
+                id="buy-invest-amount"
+                placeholder="Investment Amount"
+                variant="underlined"
+                label="Investment Amount"
+                />
             </div>
             <div className="modal-footer border-0">
-                <button className='btn buy-btn'>Buy</button>
+                <div className="text-center mt-8 mb-5">
+                <Button
+                    color="success"
+                    variant="ghost"
+                    className="buy-btn w-1/5"
+                    type="submit"
+                >
+                    BUY
+                </Button>
+                </div>
             </div>
         </form>
     )
