@@ -1,4 +1,3 @@
-
 # Crypto-Paper-Trader
 
 This is a powerful and user-friendly tool designed to help both novice and experienced traders hone their investment skills without risking real capital. This innovative software provides a risk-free environment where users can practice trading strategies, analyze market trends, and build confidence in their trading abilities. We made this project as a part of coursework for CSN-291 - Object Oriented Analysis and Design.
