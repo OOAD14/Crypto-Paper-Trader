@@ -1,7 +1,10 @@
 import React, { useRef, useState } from 'react'
+import {Input} from "@nextui-org/react";
+import {Button, ButtonGroup} from "@nextui-org/react";
 import { basicAxios } from '../../api/customAxios'
-
+import './signup.css'
 const Signup = ({ login_modal }) => {
+    
     const usernameRef = useRef()
     const emailRef = useRef()
     const passwordRef = useRef()
@@ -40,23 +43,24 @@ const Signup = ({ login_modal }) => {
 
             <form onSubmit={register} noValidate>
                 <div className="form-floating mb-3">
-                    <input ref={emailRef} type="email" className="form-control" id="signupEmail" placeholder="name@example.com" />
-                    <label forhtml="signupEmail">Email address</label>
+                    <Input ref={emailRef} type="email" className="form-control dark text-foreground flex w-full flex-wrap md:flex-nowrap gap-4" id="signupEmail" placeholder="name@example.com" />
+                    {/* <label forhtml="signupEmail">Email address</label> */}
                 </div>
                 <div className="form-floating mb-3">
-                    <input ref={usernameRef} type="text" className="form-control" id="signupUsername" placeholder="Username" />
-                    <label forhtml="signupUsername">Username</label>
+                    <Input ref={usernameRef} type="text" className="form-control dark text-foreground flex w-full flex-wrap md:flex-nowrap gap-4" id="signupUsername" placeholder="Username" />
+                    {/* <label forhtml="signupUsername">Username</label> */}
                 </div>
                 <div className="form-floating mb-3">
-                    <input ref={passwordRef} type="password" className="form-control" id="signupPassword" placeholder="Password" />
-                    <label forhtml="signupPassword">Password</label>
+                    <Input ref={passwordRef} type="password" className="form-control dark text-foreground flex w-full flex-wrap md:flex-nowrap gap-4" id="signupPassword" placeholder="Password" />
+                    {/* <label forhtml="signupPassword">Password</label> */}
                 </div>
                 <div className="form-floating">
-                    <input ref={cpasswordRef} type="password" className="form-control" id="signupCPassword" placeholder="Confirm Password" />
-                    <label forhtml="signupCPassword">Confirm Password</label>
+                    <Input ref={cpasswordRef} type="password" className="form-control dark text-foreground flex w-full flex-wrap md:flex-nowrap gap-4" id="signupCPassword" placeholder="Confirm Password" />
+                    {/* <label forhtml="signupCPassword">Confirm Password</label> */}
                 </div>
                 <div className="mt-3 d-flex justify-content-center">
-                    <button className='btn btn-primary'>Signup</button>
+                    <Button className='btn btn-primary' color="success" variant="flat" onClick={register}>Signup</Button>
+                    {/* <p className='xx'>Already Have an Account? </p> <p className='xc'>Login</p> */}
                 </div>
             </form>
         </>

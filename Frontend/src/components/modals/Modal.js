@@ -1,8 +1,8 @@
 import React from 'react'
-
+import './modal.css'
 const Modal = (props) => {
     return (
-        <div className="modal fade" style={{ backgroundImage: "linear-gradient(180deg, #000000 0%, #321570 100%)" }} id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog">
                 <div className="modal-content">
                     <div className="modal-header">

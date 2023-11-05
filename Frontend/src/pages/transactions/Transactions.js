@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { basicAxios } from '../../api/customAxios';
 import CustomNavbar from '../../components/customnavbar/CustomNavbar';
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Pagination } from "@nextui-org/react";
+import './transactions.css'
 
 const Transactions = () => {
     const [trans, setTrans] = useState([]);
@@ -27,10 +28,11 @@ const Transactions = () => {
     }, [page, trans]);
 
     return (
-        <div>
+        <div >
             <CustomNavbar isDashboard = {false} isStockWindow = {false} isTransaction = {true} />
-            <div>
+            <div  >
                 <Table
+                    
                     aria-label = "Transaction table with client-side pagination"
                     bottomContent = {
                         <div className="flex w-full justify-center">
@@ -48,6 +50,8 @@ const Transactions = () => {
                     classNames = {{
                         wrapper: "min-h-[222px]",
                     }}
+                    className='dark text-foreground bg-background'
+                    
                 >
                     <TableHeader>
                     <TableColumn key="stock_name">Cryptocurrency</TableColumn>
@@ -67,6 +71,9 @@ const Transactions = () => {
                     )}
                     </TableBody>
                 </Table>
+            </div>
+            <div className= 'n1'>
+                
             </div>
             
         </div>

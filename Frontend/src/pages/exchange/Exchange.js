@@ -3,7 +3,7 @@ import { basicAxios } from "../../api/customAxios"
 import CustomNavbar from '../../components/customnavbar/CustomNavbar';
 import TradingViewWidget from '../../components/TradingViewWidget';
 import TradingViewScreenerWidget from '../../components/TradingViewScreenerWidget';
-
+import './exchange.css';
 const Exchange = () => {
     const [balance, setBalance] = useState("");
     const [change, setChange] = useState(0);
@@ -51,7 +51,7 @@ const Exchange = () => {
         <div style = {{ overflow: "hidden" }}>
             <CustomNavbar isDashboard={true} isStockWindow={false} isTransaction={false} />
 			
-			<div style={{ height: 600, display: 'flex' }}>
+			<div style={{ height: 900, display: 'flex' }} className='hi'>
 				<div style={{ flex: 4, height: '100%' }}>
 					<div style={{ width: 400, padding: '10px' }}>
 						<div class="tradingview-screener-widget-container">

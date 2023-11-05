@@ -3,7 +3,7 @@ import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure,
 import { basicAxios } from '../../api/customAxios';
 import { Text, Textarea, Spinner, Button, Table, TableHeader, TableColumn, TableBody, TableRow, TableCell } from '@nextui-org/react'; // Import Next UI components
 import CustomNavbar from '../../components/customnavbar/CustomNavbar';
-
+import './market.css'
 import Buy from '../../components/Buy';
 import Sell from '../../components/Sell';
 
@@ -491,7 +491,7 @@ const Market = () => {
 					label="Balance / Leverage"
 					labelPlacement="inside"
 					placeholder={`$${balance}`}
-					className="max-w-xs ml-5 mr-2.5 mt-5 mb-5"
+					className="dark text-foreground  max-w-xs ml-2.5 mr-5 mt-5 mb-5"
 					style={{
 						textAlign: 'center',
 						color: 'white',
@@ -508,11 +508,13 @@ const Market = () => {
 					<Textarea
 					isDisabled
 					key="flat2"
+					status="default"
 					variant="flat"
 					label="Net Profit / Loss"
 					labelPlacement="inside"
 					placeholder={`$${change}`}
-					className="max-w-xs ml-2.5 mr-5 mt-5 mb-5"
+					className="dark text-foreground  max-w-xs ml-2.5 mr-5 mt-5 mb-5"
+					// className="max-w-xs ml-2.5 mr-5 mt-5 mb-5 "
 					style={{
 						textAlign: 'center',
 						color: 'white',
@@ -562,9 +564,9 @@ const Market = () => {
 					</div> */}
 			</div>
 
-			<div>
-				<div>
-					<Table striped bordered hover variant="dark">
+			<div >
+				<div >
+					<Table  className="dark text-foreground bg-background" striped bordered hover >
 						<TableHeader>
 							<TableColumn style={{ width: '5%' }}>
 								<div>#</div>
