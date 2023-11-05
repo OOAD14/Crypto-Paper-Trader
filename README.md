@@ -12,6 +12,7 @@ This is a powerful and user-friendly tool designed to help both novice and exper
 * In the Backend folder run `python manage.py runserver`
 * In the Frontend folder run `npm start`
 * Browse to [http://localhost:3000](http://localhost:3000)
+* The admin page maybe accesed via [http://localhost:8000/admin](http://localhost:8000/admin).
 ## Screenshots
 to be added lmao
 ## Members
