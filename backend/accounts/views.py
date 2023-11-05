@@ -5,13 +5,15 @@ from rest_framework import status
 from rest_framework.response import Response
 from trading.serializers import *
 from .serializers import JwtSerializer, RegisterSerializer, UserSerializer
-from rest_framework import serializers
 from django.contrib.auth import authenticate
 from django.contrib.auth.password_validation import validate_password
 from django.contrib.auth import login, logout
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework import serializers
 
-INITIAL_BALANCE = 100000  
+
+INITIAL_BALANCE = 100000
+#initial balance is hard coded but maybe changed  
 
 def get_tokens_for_user(user):
 
