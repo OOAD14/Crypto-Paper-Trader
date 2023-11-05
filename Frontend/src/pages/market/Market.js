@@ -7,6 +7,7 @@ import './market.css'
 import Buy from '../../components/Buy';
 import Sell from '../../components/Sell';
 
+
 let lastP1 = null;
 let lastP2 = null;
 let lastP3 = null;
@@ -17,17 +18,20 @@ let lastP10 = null;
 let lastP11 = null;
 let lastP12 = null;
 let lastP14 = null;
+const BASE_URL = 'https://api.exchangeratesapi.io/latest'
 
 
 const Market = () => {
+
 	const [balance, setBalance] = useState('');
 	const [change, setChange] = useState(0);
-	
 	const [pricing1, setpricing1] = useState(null);
 	const [price_fluctuation1, setprice_fluctuation1] = useState({ color: 'white' });
 	const [curr1, setCurr1] = useState(0);
 	const [showBuy1, setShowBuy1] = useState(false);
 	const [showSell1, setShowSell1] = useState(false);
+
+
 
 	const popupBuy1 = async (e) => {
 		if (!showBuy1) {
@@ -48,7 +52,7 @@ const Market = () => {
 	const [curr2, setCurr2] = useState(0);
 	const [showBuy2, setShowBuy2] = useState(false);
 	const [showSell2, setShowSell2] = useState(false);
-
+	const [valinr, setValinr] = React.useState("");
 	const popupBuy2 = async (e) => {
 		if (!showBuy2) {
 			setCurr2(parseInt(pricing2));
@@ -224,7 +228,7 @@ const Market = () => {
 		setShowSell14(!showSell14);
 	};
 
-
+	
 	
 	let ws1 = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@trade'); // BTC == Bitcoin
 	let ws2 = new WebSocket('wss://stream.binance.com:9443/ws/ethusdt@trade'); // ETH == Ethereum
@@ -533,14 +537,21 @@ const Market = () => {
 						<Textarea
 						variant="underlined" 
 						permission="edit" 
+						label="USD"
 						placeholder="USD"
+						className="dark text-foreground"
+						value={valinr}
+       					onValueChange={setValinr}
 						/>
 					</div>
+					
 					<div>
 						<Textarea
 						isDisabled
 						variant="underlined" 
-						placeholder="INR"
+						label="INR"
+						className="dark text-foreground"
+						value = {83*parseInt(valinr)}
 						/>
 					</div>
 				</div>

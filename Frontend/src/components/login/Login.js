@@ -15,7 +15,7 @@ const Login = () => {
 
         try {
             if (username === "" || password === "")
-                throw new Error("Fields can not be left empty")
+                throw new Error("Fields can't be empty!")
             const res = await basicAxios.post("/accounts/login/", {
                 username: usernameRef.current.value,
                 password: passwordRef.current.value,
