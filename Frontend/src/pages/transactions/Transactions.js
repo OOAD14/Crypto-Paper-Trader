@@ -30,9 +30,9 @@ const Transactions = () => {
     return (
         <div >
             <CustomNavbar isDashboard = {false} isStockWindow = {false} isTransaction = {true} />
-            <div  >
+            <div>
                 <Table
-                    
+                    style={{ height: "76vh" }}
                     aria-label = "Transaction table with client-side pagination"
                     bottomContent = {
                         <div className="flex w-full justify-center">
@@ -71,11 +71,7 @@ const Transactions = () => {
                     )}
                     </TableBody>
                 </Table>
-            </div>
-            <div className= 'n1'>
-                
-            </div>
-            
+            </div>            
         </div>
     );
 };

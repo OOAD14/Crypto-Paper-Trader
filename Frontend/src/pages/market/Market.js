@@ -8,16 +8,16 @@ import Buy from '../../components/Buy';
 import Sell from '../../components/Sell';
 
 
-let lastP1 = null;
-let lastP2 = null;
-let lastP3 = null;
-let lastP5 = null;
-let lastP7 = null;
-let lastP9 = null;
-let lastP10 = null;
-let lastP11 = null;
-let lastP12 = null;
-let lastP14 = null;
+let lastP1 = 0;
+let lastP2 = 0;
+let lastP3 = 0;
+let lastP5 = 0;
+let lastP7 = 0;
+let lastP9 = 0;
+let lastP10 = 0;
+let lastP11 = 0;
+let lastP12 = 0;
+let lastP14 = 0;
 const BASE_URL = 'https://api.exchangeratesapi.io/latest'
 
 
@@ -25,7 +25,7 @@ const Market = () => {
 
 	const [balance, setBalance] = useState('');
 	const [change, setChange] = useState(0);
-	const [pricing1, setpricing1] = useState(null);
+	const [pricing1, setpricing1] = useState(0);
 	const [price_fluctuation1, setprice_fluctuation1] = useState({ color: 'white' });
 	const [curr1, setCurr1] = useState(0);
 	const [showBuy1, setShowBuy1] = useState(false);
@@ -47,7 +47,7 @@ const Market = () => {
 		setShowSell1(!showSell1);
 	};
 
-	const [pricing2, setpricing2] = useState(null);
+	const [pricing2, setpricing2] = useState(0);
 	const [price_fluctuation2, setprice_fluctuation2] = useState({ color: 'white' });
 	const [curr2, setCurr2] = useState(0);
 	const [showBuy2, setShowBuy2] = useState(false);
@@ -67,7 +67,7 @@ const Market = () => {
 		setShowSell2(!showSell2);
 	};
 
-	const [pricing3, setpricing3] = useState(null);
+	const [pricing3, setpricing3] = useState(0);
 	const [price_fluctuation3, setprice_fluctuation3] = useState({ color: 'white' });
 	const [curr3, setCurr3] = useState(0);
 	const [showBuy3, setShowBuy3] = useState(false);
@@ -87,7 +87,7 @@ const Market = () => {
 		setShowSell3(!showSell3);
 	};
 
-	const [pricing5, setpricing5] = useState(null);
+	const [pricing5, setpricing5] = useState(0);
 	const [price_fluctuation5, setprice_fluctuation5] = useState({ color: 'white' });
 	const [curr5, setCurr5] = useState(0);
 	const [showBuy5, setShowBuy5] = useState(false);
@@ -107,7 +107,7 @@ const Market = () => {
 		setShowSell5(!showSell5);
 	};
 
-	const [pricing7, setpricing7] = useState(null);
+	const [pricing7, setpricing7] = useState(0);
 	const [price_fluctuation7, setprice_fluctuation7] = useState({ color: 'white' });
 	const [curr7, setCurr7] = useState(0);
 	const [showBuy7, setShowBuy7] = useState(false);
@@ -127,7 +127,7 @@ const Market = () => {
 		setShowSell7(!showSell7);
 	};
 
-	const [pricing9, setpricing9] = useState(null);
+	const [pricing9, setpricing9] = useState(0);
 	const [price_fluctuation9, setprice_fluctuation9] = useState({ color: 'white' });
 	const [curr9, setCurr9] = useState(0);
 	const [showBuy9, setShowBuy9] = useState(false);
@@ -147,7 +147,7 @@ const Market = () => {
 		setShowSell9(!showSell9);
 	};
 
-	const [pricing10, setpricing10] = useState(null);
+	const [pricing10, setpricing10] = useState(0);
 	const [price_fluctuation10, setprice_fluctuation10] = useState({ color: 'white' });
 	const [curr10, setCurr10] = useState(0);
 	const [showBuy10, setShowBuy10] = useState(false);
@@ -167,7 +167,7 @@ const Market = () => {
 		setShowSell10(!showSell10);
 	};
 
-	const [pricing11, setpricing11] = useState(null);
+	const [pricing11, setpricing11] = useState(0);
 	const [price_fluctuation11, setprice_fluctuation11] = useState({ color: 'white' });
 	const [curr11, setCurr11] = useState(0);
 	const [showBuy11, setShowBuy11] = useState(false);
@@ -187,7 +187,7 @@ const Market = () => {
 		setShowSell11(!showSell11);
 	};
 
-	const [pricing12, setpricing12] = useState(null);
+	const [pricing12, setpricing12] = useState(0);
 	const [price_fluctuation12, setprice_fluctuation12] = useState({ color: 'white' });
 	const [curr12, setCurr12] = useState(0);
 	const [showBuy12, setShowBuy12] = useState(false);
@@ -208,7 +208,7 @@ const Market = () => {
 	};
 
 
-	const [pricing14, setpricing14] = useState(null);
+	const [pricing14, setpricing14] = useState(0);
 	const [price_fluctuation14, setprice_fluctuation14] = useState({ color: 'white' });
 	const [curr14, setCurr14] = useState(0);
 	const [showBuy14, setShowBuy14] = useState(false);
@@ -391,7 +391,7 @@ const Market = () => {
 		2000
 	);
 
-	setInterval(async () => {
+	setTimeout(async () => {
 		const res1 = await basicAxios.post('/trading/getbalance/', {
 			jwt_token: localStorage.getItem('jwt_token'),
 		});
@@ -721,7 +721,7 @@ const Market = () => {
 
 							<TableRow>
 								<TableCell textAlign="center">8</TableCell>
-								<TableCell textAlign="center">Litecoine</TableCell>
+								<TableCell textAlign="center">Litecoin</TableCell>
 								<TableCell textAlign="center">LTC</TableCell>
 								<TableCell textAlign="center" style={price_fluctuation11}>${parseInt(pricing11)}</TableCell>
 								<TableCell textAlign="center">

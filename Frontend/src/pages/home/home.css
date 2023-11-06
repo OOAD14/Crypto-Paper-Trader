@@ -2,20 +2,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 90vh; */
-    padding: 100px;
-}
-.home-container{
-    height: 100vh;
-    background-color: #1f1f22;
-    color: aliceblue;
+    padding: 10px;
 }
 .btnc-btnme-3{
     margin: 10px;
 }
 
-.lol{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.toggle-link {
+    color: white;
+    cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+    text-decoration: underline; /* Optionally add an underline for better visibility */
 }
+
+/* Style the tooltip content */
+.tooltip-content {
+    background-color: #1d1d1d;
+    color: white;
+}
+

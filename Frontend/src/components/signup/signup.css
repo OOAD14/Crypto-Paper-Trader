@@ -5,3 +5,10 @@
 .xc{
     color: rgb(0, 170, 255);
 }
+
+.gradient-border {
+    border: 5px solid transparent; /* Set the border width */
+    background-clip: padding-box; /* Ensure the background doesn't overlap the border */
+    background-color: "#010100";
+    border-radius: "10px";
+}

@@ -1,38 +1,40 @@
-import { useState } from 'react'
-import Modal from '../../components/modals/Modal'
-import Signup from "../../components/signup/Signup"
-import Login from "../../components/login/Login"
-import {Button, ButtonGroup} from "@nextui-org/react";
-import './home.css'
+import { useState } from 'react';
+import Modal from '../../components/modals/Modal';
+import Signup from "../../components/signup/Signup";
+import Login from "../../components/login/Login";
+import { Button, ButtonGroup } from "@nextui-org/react";
+import { Tooltip } from "@nextui-org/react";
+import './home.css';
 
 const Home = () => {
-    const [signup_modal, setSignup_modal] = useState(true)
+    const [signup_modal, setSignup_modal] = useState(false);
+    const [showLoginText, setShowLoginText] = useState(true);
+
+    const toggleModal = () => {
+        setSignup_modal(!signup_modal);
+        setShowLoginText(!showLoginText);
+    };
 
     return (
-        <div>
-            {/* {signup_modal ? <Modal modal_body={<Signup login_modal={setSignup_modal} />} modal_title={"Register"} /> :
-                <Modal modal_body={<Login />} modal_title={"Login"} />} */}
-            <div className='home-container'>
-                <div className='box box-1'>
-                    <div className="card c-card">
-                        <div className="card-body">
-                            <h5 className="card-title">Crypto Paper Trader</h5>
-                            <p className="card-text">Welcome to Crypto Paper Trading Platform
-                                Login or signup to continue.</p>
-                            <div className='hello'>
-                            {signup_modal ? <Modal modal_body={<Signup login_modal={setSignup_modal} />} modal_title={"Register"} /> :
-                            <Modal modal_body={<Login />} modal_title={"Login"} />}
-                            </div>
-                            <div className='lol'>
-                            <Button onClick={() => setSignup_modal(true)} className="btnc-btnme-3" data-bs-toggle="modal" data-bs-target="#exampleModal" color="secondary" variant="ghost">Signup</Button>
-                            <Button onClick={() => setSignup_modal(false)} className="btnc-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" color="secondary" variant="ghost">Login</Button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div style={{ backgroundColor: "#121212", height: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", color: "white" }}>
+            <div style={{ marginTop:"60px" }}>
+                {showLoginText ? (
+                    
+                        <Button onClick={toggleModal} className="toggle-link">New user? Sign Up here</Button>
+                    
+                ) : (
+                    
+                        <Button onClick={toggleModal} className="toggle-link">Registered already? Login here</Button>
+                    
+                )}
+            </div>
+            <div className='hello' style={{ marginTop: "20px" }}>
+                {signup_modal ? <Modal modal_body={<Signup login_modal={setSignup_modal} />}style={{ alignItems: "center", justifyContent: "center" }}/> :
+                    <Modal modal_body={<Login />} style={{ alignItems: "center", justifyContent: "center" }}/>}
             </div>
         </div>
-    )
+    
+    );
 }
 
-export default Home
+export default Home;
