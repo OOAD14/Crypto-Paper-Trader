@@ -24,11 +24,11 @@ This is a powerful and user-friendly tool designed to help both novice and exper
 ![hi](https://github.com/OOAD14/Crypto-Paper-Trader/assets/116339436/55b2f79a-d699-4bdd-8bf8-dc604172ffcb)
 
 ## Members
-- [@cruelkratos](https://www.github.com/cruelkratos)
-- [@mmukulkhedekar](https://www.github.com/mmukulkhedekar)
-- [@granthgaud](https://www.github.com/granthgaud)
-- [@divyanshhanma](https://www.github.com/divyanshhanma)
-- [@atharvj07](https://www.github.com/atharvj07)
+- [@cruelkratos](https://www.github.com/cruelkratos) - 22115057
+- [@mmukulkhedekar](https://www.github.com/mmukulkhedekar) - 22114054
+- [@granthgaud](https://www.github.com/granthgaud) / [@gaud4](https://www.github.com/gaud4) - 22114035
+- [@divyanshhanma](https://www.github.com/divyanshhanma) - 22114033
+- [@atharvj07](https://www.github.com/atharvj07) - 22114012
 
 ## License
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
