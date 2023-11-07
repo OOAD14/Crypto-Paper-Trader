@@ -12,6 +12,7 @@ This is a powerful and user-friendly tool designed to help both novice and exper
 * In the Frontend folder run `npm start`
 * Browse to [http://localhost:3000](http://localhost:3000)
 * The admin page maybe accesed via [http://localhost:8000/admin](http://localhost:8000/admin).
+
 ## Screenshots
 ![05 11 2023_18 00 07_REC](https://github.com/OOAD14/Crypto-Paper-Trader/assets/116339436/5becffaf-58e8-486a-b724-403275f816df)
 ![05 11 2023_18 11 25_REC](https://github.com/OOAD14/Crypto-Paper-Trader/assets/116339436/f17dc7b3-4bfc-4cf7-9586-03e12742a7a6)
@@ -21,7 +22,6 @@ This is a powerful and user-friendly tool designed to help both novice and exper
 ![hi](https://github.com/OOAD14/Crypto-Paper-Trader/assets/116339436/55b2f79a-d699-4bdd-8bf8-dc604172ffcb)
 
 ## Members
-
 - [@cruelkratos](https://www.github.com/cruelkratos)
 - [@mmukulkhedekar](https://www.github.com/mmukulkhedekar)
 - [@granthgaud](https://www.github.com/granthgaud)
@@ -29,9 +29,5 @@ This is a powerful and user-friendly tool designed to help both novice and exper
 - [@atharvj07](https://www.github.com/atharvj07)
 
 ## License
-
-
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-
-
 [MIT](https://choosealicense.com/licenses/mit/)
